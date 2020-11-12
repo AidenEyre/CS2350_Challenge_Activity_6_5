@@ -33,4 +33,12 @@ function setup() {
         listLength[i].setAttribute("class", "listitem");    // Set the class
         listLength[i].style.color = "red";                  // Set the text color to red
     }
+
+
+    // Create an image node
+    let firstImage = document.createElement("img")
+    firstImage.setAttribute("src", "../images/imageOne.jpg");
+
+    // Insert the node between the h1 and list
+    document.body.insertBefore(firstImage, document.body.querySelector("ul"));
 }
