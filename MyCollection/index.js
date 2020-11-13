@@ -12,7 +12,7 @@
                  the headText and hikes array.
 
       styles() - Loads css styles through JavaScript.
-      
+
   switchPage() - Loads an html input button to switch between My Collection
                  and About Me Page. 
    
@@ -71,7 +71,14 @@ function hikeTable() {
     // Set up text for each of the table cells
     let text1 = document.createTextNode(hikes[i].Hike);
     let text2 = document.createTextNode(hikes[i].Location);
-    let text3 = document.createTextNode(hikes[i].alreadyHiked);
+    let text3 = document.createElement("img");
+
+    // If I've already hiked then show a hiker, if not show me sleep instead
+    if (hikes[i].alreadyHiked === true) {
+        text3.setAttribute("src", "../images/haveHiked.png");
+    } else {
+        text3.setAttribute("src", "../images/notHiked.png");
+    }
 
     // Add the text to each cell and the cells to the table row
     td1.appendChild(text1);
