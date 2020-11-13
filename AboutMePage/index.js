@@ -48,10 +48,11 @@ function setup() {
     // Insert the node between the h1 and list
     document.body.insertBefore(pageImage, document.body.querySelector("ul"));
 
-    // Create a button node
-    let pageLink = document.createElement("button");
-    pageLink.setAttribute("onclick", "");
-    pageLink.innerHTML = "My Books!";
+    // Create an input node
+    let pageLink = document.createElement("input");
+    pageLink.setAttribute("type", "button");
+    pageLink.setAttribute("onclick", "location.href='../MyCollection/index.html';");
+    pageLink.setAttribute("value", "My Books!");
 
     // Add the button to the html document
     document.body.appendChild(pageLink);
