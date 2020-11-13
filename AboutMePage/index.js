@@ -8,7 +8,8 @@
 
    Filename: styles.js
    
-   Write functions here *****
+   setup() - Function to set up all the page elements with JavaScript.
+   changePic() - Function to handle changing the picture whenever it is called.
    
 */
 
@@ -16,14 +17,14 @@
 let pageImage = document.createElement("img")
 pageImage.setAttribute("src", "../images/imageOne.jpg");
 
-
+// Event listeners for page load and image click.
 window.addEventListener("load", setup);
 pageImage.addEventListener("click", ChangePic);
 
 // Global variable to keep track of current image
 let currentImage = 1;
 
-
+// Set up all the page elements with JavaScript
 function setup() {
     // Change the font family for the body
     document.body.style.fontFamily = "Arial, sans-serif";
