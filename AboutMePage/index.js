@@ -12,11 +12,13 @@
    
 */
 
-window.addEventListener("load", setup);
-
 // Create an image node as a global variable
-let firstImage = document.createElement("img")
-firstImage.setAttribute("src", "../images/imageOne.jpg");
+let pageImage = document.createElement("img")
+pageImage.setAttribute("src", "../images/imageOne.jpg");
+
+
+window.addEventListener("load", setup);
+pageImage.addEventListener("click", ChangePic);
 
 // Global variable to keep track of current image
 let currentImage = 1;
@@ -43,15 +45,16 @@ function setup() {
     }
 
     // Insert the node between the h1 and list
-    document.body.insertBefore(firstImage, document.body.querySelector("ul"));
+    document.body.insertBefore(pageImage, document.body.querySelector("ul"));
 }
 
+// Function that swaps the pageImage src based off of the current image
 function ChangePic() {
-    if (currentImage === 1) {
-        firstImage.setAttribute("src", "../images/imageTwo.jpeg");
+    if (currentImage === 1) {   // If current image is one change to imageTwo
+        pageImage.setAttribute("src", "../images/imageTwo.jpeg");
         currentImage = 2;
-    } else {
-        firstImage.setAttribute("src", "../images/imageOne.jpg");
+    } else {    // If current image is two change to imageOne
+        pageImage.setAttribute("src", "../images/imageOne.jpg");
         currentImage = 1;
     }
 }
