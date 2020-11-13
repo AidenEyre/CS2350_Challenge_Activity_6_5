@@ -14,6 +14,14 @@
 
 window.addEventListener("load", setup);
 
+// Create an image node as a global variable
+let firstImage = document.createElement("img")
+firstImage.setAttribute("src", "../images/imageOne.jpg");
+
+// Global variable to keep track of current image
+let currentImage = 1;
+
+
 function setup() {
     // Change the font family for the body
     document.body.style.fontFamily = "Arial, sans-serif";
@@ -34,11 +42,16 @@ function setup() {
         listLength[i].style.color = "red";                  // Set the text color to red
     }
 
-
-    // Create an image node
-    let firstImage = document.createElement("img")
-    firstImage.setAttribute("src", "../images/imageOne.jpg");
-
     // Insert the node between the h1 and list
     document.body.insertBefore(firstImage, document.body.querySelector("ul"));
+}
+
+function ChangePic() {
+    if (currentImage === 1) {
+        firstImage.setAttribute("src", "../images/imageTwo.jpeg");
+        currentImage = 2;
+    } else {
+        firstImage.setAttribute("src", "../images/imageOne.jpg");
+        currentImage = 1;
+    }
 }
